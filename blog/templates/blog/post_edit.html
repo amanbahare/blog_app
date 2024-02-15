@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>New post</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-secondary">Save</button>
+    </form>
+{% endblock %} 
+
+{% comment %} {% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>Edit post</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.title }}
+        <textarea name="text" cols="40" rows="10">{{ post.text }}</textarea>
+        <button type="submit" class="save btn btn-secondary">Save</button>
+    </form>
+{% endblock %} {% endcomment %}
