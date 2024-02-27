@@ -27,10 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import sys
+import os
 
-# Application definition
+sys.path.append(os.path.abspath('/var/www/python/pollapp/mysite'))
+print(sys.path)
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    # 'polls.apps.PollsAppConfig', 
 ]
 
 MIDDLEWARE = [
